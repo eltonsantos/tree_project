@@ -4,7 +4,9 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
+    @subcategories = Subcategory.all
     @categories = Category.all
+    @products = Product.all
   end
 
   # GET /categories/1

@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   get 'home/index'
   root "home#index"
-  resources :products
-  resources :subcategories
-  resources :categories
+  resources :categories do
+    resources :subcategories do
+      resources :products
+    end  
+  end
   resources :products
   resources :products
   # The priority is based upon order of creation: first created -> highest priority.
