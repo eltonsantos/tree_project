@@ -1,0 +1,16 @@
+<h3>Categorias</h3>
+<ul>
+<% @categories.each do |category| %>
+	<li><%= link_to "Categoria", "#" %></li>
+<% end %>
+</ul>
+
+<br />
+<br />
+
+<h3>Produtos</h3>
+<ul>
+	<% @products.each do |product| %>
+		<li><%= link_to "Produto", "#" %></li>
+	<% end %>
+</ul>
