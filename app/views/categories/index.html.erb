@@ -1,15 +1,15 @@
-<h3>Subategorias da categoria: </h3>
+<h3>Subcategorias da categoria: <%= @categories.name %></h3>
 <ul>
 	<li>-- Mostra todas as subcategorias daquela categoria específica --</li>
 	<% @subcategories.each do |subcategory| %>
-	  <li><%= link_to "#{subcategory.name}", "#" %></li>
+	  <li><%= link_to "#{subcategory.name}", category_subcategory_path(@categories, subcategory) %></li>
 	<% end %>
 </ul>
 
 <br />
 <br />
 
-<h3>Produtos</h3>
+<h3>Produtos da categoria: <%= @categories.name %></h3>
 <ul>
   <li>-- Mostra todos os produtos daquela categoria --</li>
   <% @products.each do |product| %>
