@@ -27,4 +27,14 @@ class HomeController < ApplicationController
     @products = @subcategory.products
     puts "Parâmetros: #{params}"
   end
+
+  def show_product
+    # Mostra todas as categorias
+    @categories = Category.all
+    # Mostra todos as subcategorias
+    @subcategories = Subcategory.all
+    # Mostra todos os produtos
+    @products = Product.all
+    puts "Parâmetros: #{params}"
+  end
 end

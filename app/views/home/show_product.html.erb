@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>Subcategory:</strong>
+  <%= @product.subcategory.name %>
+</p>
+
+<p>
+	<strong>Category:</strong>
+	<%= @product.subcategory.category.name %>
+</p>
+
