@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
-    @subcategories = Subcategory.all
+    @subcategory = Subcategory.find(:category_id)
     @products = Product.all
   end
 

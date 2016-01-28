@@ -1,0 +1,15 @@
+<h3>Características da subcategoria: <%= @subcategory.name %>, da categoria: <%= @category.name %></h3>
+<ul>
+  <li>Não implementado - Características</li>
+</ul>
+
+<br />
+<br />
+
+<h3>Produtos</h3>
+<ul>
+  <li>-- Mostra todos os produtos daquela subcategoria --</li>
+  <% @products.each do |product| %>
+    <li><%= link_to "#{product.name}", category_subcategory_product_path(@category, @subcategory, product) %></li>
+  <% end %>
+</ul>

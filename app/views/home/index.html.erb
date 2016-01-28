@@ -2,7 +2,7 @@
 <ul>
 	<li>-- Mostra todas as características --</li>
 	<% @categories.each do |category| %>
-		<li><%= link_to "#{category.name}", categories_path(category) %></li>
+		<li><%= link_to "#{category.name}", home_category_path(category) %></li>
 	<% end %>
 </ul>
 
