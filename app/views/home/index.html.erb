@@ -1,6 +1,6 @@
 <h3>Todas as Categorias</h3>
 <ul>
-	<li>-- Mostra todas as características --</li>
+	-- Mostra todas as características --
 	<% @categories.each do |category| %>
 		<li><%= link_to "#{category.name}", home_category_path(category) %></li>
 	<% end %>
@@ -11,7 +11,7 @@
 
 <h3>Todos os Produtos</h3>
 <ul>
-	<li>-- Mostra todos os produtos de todas as categorias --</li>
+	-- Mostra todos os produtos de todas as categorias --
 	<% @products.each do |product| %>
 		<li><%= link_to "#{product.name}", category_subcategory_product_path(@categories, @subcategories, product) %></li>
 	<% end %>
