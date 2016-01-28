@@ -7,6 +7,7 @@ class HomeController < ApplicationController
   	@subcategories = Subcategory.all
     # Mostra todos os produtos
   	@products = Product.all
+    puts "Parâmetros: #{params}"
   end
 
   # 
@@ -14,13 +15,16 @@ class HomeController < ApplicationController
     # Pega o id da categoria
   	@category = Category.find(params[:id])
     @subcategories = @category.subcategories
-    @products = Product.all
+    @subcategory = Subcategory.find(params[:id])
+    @products = @subcategory.products
+    puts "Parâmetros: #{params}"
   end
 
   # 
   def show_subcategory
-    @category = Category.find(params[:id])
+    @category = Category.find(params[:category_id])
     @subcategory = Subcategory.find(params[:id])
     @products = @subcategory.products
+    puts "Parâmetros: #{params}"
   end
 end

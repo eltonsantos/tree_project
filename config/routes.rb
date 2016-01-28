@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   get 'home/index'
   get 'home/category/:id' => 'home#show_category', as: :home_category
-  get 'home/category/:id/subcategory/:id' => 'home#show_subcategory', as: :home_subcategory
+  get 'home/category/:category_id/subcategory/:id' => 'home#show_subcategory', as: :home_subcategory
   
   root "home#index"
   

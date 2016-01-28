@@ -2,7 +2,7 @@
 <ul>
 	<li>-- Mostra todas as subcategorias daquela categoria específica --</li>
 	<% @subcategories.each do |subcategory| %>
-	  <li><%= link_to "#{subcategory.name}", home_subcategory_path(subcategory) %></li>
+	  <li><%= link_to "#{subcategory.name}", home_subcategory_path(@category, subcategory) %></li>
 	<% end %>
 </ul>
 
