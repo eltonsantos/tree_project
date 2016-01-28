@@ -1,8 +1,9 @@
-<h3>Subategorias</h3>
+<h3>Subategorias da categoria: </h3>
 <ul>
-<% @subcategories.each do |subcategory| %>
-  <li><%= link_to "#{subcategory.name}", "#" %></li>
-<% end %>
+	<li>-- Mostra todas as subcategorias daquela categoria específica --</li>
+	<% @subcategories.each do |subcategory| %>
+	  <li><%= link_to "#{subcategory.name}", "#" %></li>
+	<% end %>
 </ul>
 
 <br />
@@ -10,7 +11,8 @@
 
 <h3>Produtos</h3>
 <ul>
+  <li>-- Mostra todos os produtos daquela categoria --</li>
   <% @products.each do |product| %>
-    <li><%= link_to "#{product.name}", product %></li>
+    <li><%= link_to "#{product.name}", '#' %></li>
   <% end %>
 </ul>
