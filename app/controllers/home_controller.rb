@@ -25,6 +25,7 @@ class HomeController < ApplicationController
     puts "Parâmetros: #{params}"
   end
 
+  # Talvez não seja preciso... ou talvez sim
   def show_product
     @category = Category.find(params[:category_id])
     @subcategory = Subcategory.find(params[:subcategory_id])
