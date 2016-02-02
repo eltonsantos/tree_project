@@ -21,12 +21,29 @@ class HomeController < ApplicationController
     puts "Parâmetros: #{params}"
   end
 
-  # Talvez não seja preciso... ou talvez sim
   def show_product
     @category = Category.find(params[:category_id])
     @subcategories = @category.subcategories
     @subcategory = Subcategory.find(params[:subcategory_id])
-    @products = @subcategory.products
+    @product = Product.find(params[:id])
     puts "Parâmetros: #{params}"
+
+  # EXPLICAÇÃO
+  # category = Category.new
+  # category.subcategories # muitas subcategories
+
+  # subcategory = SubCategory.new
+  # subcategory.category # pertence a uma categoria
+  # subcategory.products # muitos produtos
+
+  # product = Product.new
+  # product.subcategory # pertence a uma subcategoria
+
+  # product.subcategory # acessa a subcategoria
+  # product.subcategory.product # acessa a categoria através da subcategoria
+
+  # http://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html#method-i-has_many
+  # http://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html#method-i-belongs_to
+
   end
 end
