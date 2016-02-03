@@ -1,16 +1,12 @@
 class HomeController < ApplicationController
   def index
-    # Mostra todas as categorias
   	@categories = Category.all
-    # Mostra todos as subcategorias
   	@subcategories = Subcategory.all
-    # Mostra todos os produtos
   	@products = Product.all
     puts "Parâmetros: #{params}"
   end
 
   def show_category
-    # Pega o id da categoria
   	@category = Category.find(params[:id])
     @subcategories = @category.subcategories
     @subcategory = Subcategory.find(params[:id])
@@ -27,8 +23,27 @@ class HomeController < ApplicationController
 
   def show_product
     @category = Category.find(params[:category_id])
+    @subcategories = @category.subcategories
     @subcategory = Subcategory.find(params[:subcategory_id])
     @product = Product.find(params[:id])
     puts "Parâmetros: #{params}"
+
+  # EXPLICAÇÃO
+  # category = Category.new
+  # category.subcategories # muitas subcategories
+
+  # subcategory = SubCategory.new
+  # subcategory.category # pertence a uma categoria
+  # subcategory.products # muitos produtos
+
+  # product = Product.new
+  # product.subcategory # pertence a uma subcategoria
+
+  # product.subcategory # acessa a subcategoria
+  # product.subcategory.product # acessa a categoria através da subcategoria
+
+  # http://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html#method-i-has_many
+  # http://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html#method-i-belongs_to
+
   end
 end
