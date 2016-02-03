@@ -14,6 +14,5 @@
 	-- Mostra todos os produtos de todas as categorias --
 	<% @products.each do |product| %>
 		<li><%= link_to "#{product.name}", home_product_path(category_id: product.subcategory.category.id, subcategory_id: product.subcategory.id, id: product.id) %></li>
-
 	<% end %>
 </ul>
