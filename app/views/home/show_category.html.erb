@@ -1,7 +1,7 @@
 <h3>Subcategorias da categoria: <%= @category.name %></h3>
 <ul>
 	-- Mostra todas as subcategorias daquela categoria específica --
-	<% @subcategories.each do |subcategory| %>
+	<% @category.subcategories.each do |subcategory| %>
 	  <li><%= link_to "#{subcategory.name}", home_subcategory_path(@category, subcategory) %></li>
 	<% end %>
 </ul>
@@ -12,7 +12,14 @@
 <h3>Produtos da categoria: <%= @category.name %></h3>
 <ul>
   -- Mostra todos os produtos daquela categoria --
-  <% @products.each do |product| %>
-    <li><%= link_to "#{product.name}", home_product_path(category_id: product.subcategory.category.id, subcategory_id: product.subcategory.id, id: product.id) %></li>
+  <% @category.subcategories.each do |subcategory| %>
+
+  	<% subcategory.products.each do |product| %>
+    	<li>
+    		<%= link_to "#{product.name}", home_product_path(category_id: product.subcategory.category.id, subcategory_id: product.subcategory.id, id: product.id) %>
+    	</li>
+    <% end %>
+
   <% end %>
+
 </ul>

@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   	@categories = Category.all
   	@subcategories = Subcategory.all
   	@products = Product.all
+    puts "Parâmetros: #{params}"
   end
 
   def show_category
