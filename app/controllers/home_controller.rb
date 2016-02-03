@@ -3,11 +3,10 @@ class HomeController < ApplicationController
   	@categories = Category.all
   	@subcategories = Subcategory.all
   	@products = Product.all
-    puts "Parâmetros: #{params}"
   end
 
   def show_category
-  	@category = Category.find(params[:id])
+    @category = Category.find(params[:id])
     @subcategories = @category.subcategories
     @subcategory = Subcategory.find(params[:id])
     @products = @subcategory.products
